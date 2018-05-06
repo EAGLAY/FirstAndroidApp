@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/rot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editText"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:text="Red"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="47dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="93dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="viewStart"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="20sp"
+        android:backgroundTint="@android:color/holo_red_dark"/>
+
+    <TextView
+        android:id="@+id/gruen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/rot"
+        android:layout_marginTop="56dp"
+        android:text="Green"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="47dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/gruen"
+        android:layout_alignStart="@+id/editText"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/blau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/rot"
+        android:layout_marginTop="94dp"
+        android:text="Blue"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="47dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/blau"
+        android:layout_alignStart="@+id/editText"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:backgroundTint="@color/colorPrimaryDark"/>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="224dp"
+        android:layout_height="28dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/rot"
+        android:layout_marginStart="168dp"
+        android:max="255"
+        android:progressTint="@android:color/holo_red_dark"
+        android:thumbTint="@android:color/holo_red_dark" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="223dp"
+        android:layout_height="32dp"
+        android:layout_alignBottom="@+id/gruen"
+        android:layout_alignStart="@+id/seekBar"
+        android:max="255"
+        android:progressTint="@android:color/holo_green_light"
+        android:thumbTint="@android:color/holo_green_light" />
+
+    <SeekBar
+        android:id="@+id/seekBar3"
+        android:layout_width="222dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/blau"
+        android:layout_alignStart="@+id/seekBar"
+        android:max="255"
+        android:thumbTint="@color/colorPrimaryDark"
+        android:progressTint="@color/colorPrimaryDark"/>
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/rot"
+        android:layout_below="@+id/button"
+        android:text="Use Motion Sensors" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="141dp"
+        android:layout_height="37dp"
+        android:layout_alignEnd="@+id/radio_gruppe"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="133dp"
+        android:text="SET COLOR" />
+
+    <TextView
+        android:id="@+id/colprev"
+        android:layout_width="119dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/seekBar"
+        android:layout_alignTop="@+id/checkBox"
+        android:background="@android:color/background_dark"
+        android:text="Color Preview"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp" />
+
+    <RadioGroup
+        android:id="@+id/radio_gruppe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="47dp">
+
+        <RadioButton
+            android:id="@+id/rb1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="check"
+            android:text="Background Color" />
+
+        <RadioButton
+            android:id="@+id/rb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="check"
+            android:text="Text Color" />
+
+        <RadioButton
+            android:id="@+id/rb3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="check"
+            android:text="Button Color" />
+
+        <RadioButton
+            android:id="@+id/rb4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="check"
+            android:text="Floating Action Button Color" />
+
+    </RadioGroup>
+
+</RelativeLayout>
